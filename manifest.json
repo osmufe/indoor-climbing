@@ -1,0 +1,50 @@
+{
+  "name": "Indoor Climbing",
+  "version": "1.0",
+  "author": "Oscar Muñoz Ferriz",
+  "description": "Indoor Climbing Ascents",
+  "type": "feature",
+  "usage": "workout",
+  "modificationTime": 1671030063, 
+  "in": [
+    {
+      "name": "DurationAscent",
+      "source": "/Fusion/Altitude/AscentTime",
+      "type": "subscribe"
+    },
+    {
+      "name": "DurationDescent",
+      "source": "/Fusion/Altitude/DescentTime",
+      "type": "subscribe"
+    },
+    {
+      "name": "AscentMeters",
+      "source": "/Fusion/Altitude/Ascent",
+      "type": "subscribe"
+    },
+    {
+      "name": "DescentMeters",
+      "source": "/Fusion/Altitude/Descent",
+      "type": "subscribe"
+    }
+  ],
+  "out": [
+    {
+      "name": "climbAttemptAscent"
+    },
+    {
+      "name": "climbDurationAscent"
+    },
+    {
+      "name": "climbAttempts"
+    },
+    {
+      "name": "climbDurationAscentDescent"
+    }
+  ],
+  "template": [
+    {
+      "name": "t.html"
+    }
+  ]
+}
