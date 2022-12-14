@@ -9,10 +9,12 @@ function evaluate(input, output) {
 
      output.climbAttemptAscent = 0;
      climbAttemptDescent = 0;
+     // Trigger lap once
      $.put("/Activity/Trigger", 0);
    }
    
    if (input.AscentMeters != null || input.DescentMeters != null) {
+    // .toFixed(0) Without decimals
     output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
     climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
     output.climbDurationAscent = input.DurationAscent;
@@ -32,8 +34,8 @@ function evaluate(input, output) {
    output.climbDurationAscent = 0;
    climbDurationDescent = 0;
    // .toFixed(0) Without decimals
-   climbTotalAscent = input.AscentMeters.toFixed(0);
-   climbTotalDescent = input.DescentMeters.toFixed(0);
+   climbTotalAscent = 0;
+   climbTotalDescent = 0;
    output.climbAttemptAscent = 0;
    climbAttemptDescent = 0;   
  }
@@ -67,6 +69,13 @@ function evaluate(input, output) {
  // exercise. onExerciseEnd() is not working at all as zapp gets disabled before
  // it is called (and it would be called only when exercise is really started).
  function getSummaryOutputs(input, output) {
-   return [];
+   return [
+     {
+      id: 'climbAttempts',
+      name: "Climb attempts",
+      format: 'Count_Fourdigits',
+      value: output.climbAttempts
+     }
+   ];
  }
  
