@@ -26,12 +26,14 @@ function evaluate(input, output) {
  }
  
  function onLoad(input, output) {
+   // Initializing Variables 
    output.climbAttempts = 0;
    output.climbDurationAscentDescent = 0;
    output.climbDurationAscent = 0;
    climbDurationDescent = 0;
-   climbTotalAscent = 0;
-   climbTotalDescent = 0;
+   // .toFixed(0) Without decimals
+   climbTotalAscent = input.AscentMeters.toFixed(0);
+   climbTotalDescent = input.DescentMeters.toFixed(0);
    output.climbAttemptAscent = 0;
    climbAttemptDescent = 0;   
  }
@@ -53,9 +55,7 @@ function evaluate(input, output) {
    return {
      template: 't',
      ascent: { input: 'output/climbAttemptAscent' , format: 'Count_Fourdigits' },
-     //descent: { input: 'output/climbAttemptDescent' , format: 'Count_Fourdigits' },
      ascent_time: { input: 'output/climbDurationAscent' , format: 'Duration_FourdigitsFixed' },
-     //descent_time: { input: 'output/climbDurationDescent' , format: 'Duration_FourdigitsFixed' },
      ascent_descent_duration: { input: 'output/climbDurationAscentDescent' , format: 'Duration_FourdigitsFixed' },
      ascents: { input: 'output/climbAttempts', format: 'Count_Sixdigits' },
      duration: { input: '/Activity/Activity/-1/Duration/Current', format: 'Duration_Training' }
