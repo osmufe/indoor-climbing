@@ -30,13 +30,13 @@
   ],
   "out": [
     {
+      "name": "climbAttempts"
+    },
+    {
       "name": "climbAttemptAscent"
     },
     {
       "name": "climbDurationAscent"
-    },
-    {
-      "name": "climbAttempts"
     },
     {
       "name": "climbDurationAscentDescent"

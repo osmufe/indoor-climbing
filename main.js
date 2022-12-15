@@ -1,3 +1,12 @@
+// Output var climbAttempts: Number of times you make a route or ascent/descent in indoor climbing.
+// Output var climbDurationAscentDescent: The time it takes to complete a route or ascent/descent in indoor climbing.
+// Output var climbDurationAscent: The ascent in meters in indoor climbing.
+// main.js var climbDurationDescent: The time it takes to descend in indoor climbing.
+// main.js var climbTotalAscent: Total training climb minus current climb.
+// main.js var climbTotalDescent: Total training decrease minus current decrease.
+// Output var climbAttemptAscent: Ascent in meters of actual ascent or indoor climbing route.
+// main.js var climbAttemptDescent: Descent in meters of actual descent or indoor climbing route.
+
 var climbAttemptDescent, climbTotalAscent, climbTotalDescent, climbDurationDescent;
 
 function evaluate(input, output) {
@@ -56,12 +65,11 @@ function evaluate(input, output) {
  function getUserInterface() {
    return {
      template: 't',
+     ascents: { input: 'output/climbAttempts', format: 'Count_Sixdigits' },
      ascent: { input: 'output/climbAttemptAscent' , format: 'Count_Fourdigits' },
      ascent_time: { input: 'output/climbDurationAscent' , format: 'Duration_FourdigitsFixed' },
      ascent_descent_duration: { input: 'output/climbDurationAscentDescent' , format: 'Duration_FourdigitsFixed' },
-     ascents: { input: 'output/climbAttempts', format: 'Count_Sixdigits' },
      duration: { input: '/Activity/Activity/-1/Duration/Current', format: 'Duration_Training' }
- 
    };
  }
  
@@ -71,6 +79,7 @@ function evaluate(input, output) {
  function getSummaryOutputs(input, output) {
    return [
      {
+      // Save the data of number of times you make a route or ascent/descent in indoor climbing into SA.
       id: 'climbAttempts',
       name: "Climb attempts",
       format: 'Count_Fourdigits',
