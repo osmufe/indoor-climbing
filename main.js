@@ -46,7 +46,6 @@ function evaluate(input, output) {
    output.climbDurationAscentDescent = 0;
    output.climbDurationAscent = 0;
    climbDurationDescent = 0;
-   // .toFixed(0) Without decimals
    climbTotalAscent = 0;
    climbTotalDescent = 0;
    output.climbAttemptAscent = 0;
@@ -69,10 +68,10 @@ function evaluate(input, output) {
  function getUserInterface() {
    return {
      template: 't',
-     ascents: { input: 'output/climbAttempts', format: 'Count_Sixdigits' },
-     ascent: { input: 'output/climbAttemptAscent' , format: 'Altitude_Fivedigits' },
-     ascent_time: { input: 'output/climbDurationAscent' , format: 'Duration_FourdigitsFixed' },
-     ascent_descent_duration: { input: 'output/climbDurationAscentDescent' , format: 'Duration_FourdigitsFixed' },
+     ascents: { input: 'output/climbAttempts', format: 'Count_Fourdigits' },
+     ascent: { input: 'output/climbAttemptAscent' , format: 'Count_Fourdigits' },
+     ascent_time: { input: 'output/climbDurationAscent' , format: 'Duration_Fourdigits' },
+     ascent_descent_duration: { input: 'output/climbDurationAscentDescent' , format: 'Duration_Fourdigits' },
      duration: { input: '/Activity/Activity/-1/Duration/Current', format: 'Duration_Training' }
    };
  }
