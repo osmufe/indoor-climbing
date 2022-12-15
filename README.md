@@ -13,4 +13,6 @@ This app is designed to show the meters climbed on each Ascent/Descent or route 
 ## To be improve:
   - Change the name of the variable used to store the number of indoor climbing accents in the SA
   - Add a second condition to count the number of ascents/descents, use for example if the descent time is not increased for a few seconds. 
+
+## I will Try to do it if possible:
   - Add an inclination data , and if is posible save the inclination dada for each lap
