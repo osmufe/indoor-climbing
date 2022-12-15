@@ -6,6 +6,10 @@
 // main.js var climbTotalDescent: Total training decrease minus current decrease.
 // Output var climbAttemptAscent: Ascent in meters of actual ascent or indoor climbing route.
 // main.js var climbAttemptDescent: Descent in meters of actual descent or indoor climbing route.
+// Watch var DurationAscent: Total time in the workout that the watch calculate Ascent Time.
+// Watch var DurationDescent: Total time in the workout that the watch calculate Descent Time.
+// Watch var AscentMeters: Total Ascent meters in the workout.
+// Watch var DescentMeters: Total Descent meters in the workout.
 
 var climbAttemptDescent, climbTotalAscent, climbTotalDescent, climbDurationDescent;
 
@@ -46,7 +50,7 @@ function evaluate(input, output) {
    climbTotalAscent = 0;
    climbTotalDescent = 0;
    output.climbAttemptAscent = 0;
-   climbAttemptDescent = 0;   
+   climbAttemptDescent = 0;  
  }
  
  /*
@@ -66,7 +70,7 @@ function evaluate(input, output) {
    return {
      template: 't',
      ascents: { input: 'output/climbAttempts', format: 'Count_Sixdigits' },
-     ascent: { input: 'output/climbAttemptAscent' , format: 'Count_Fourdigits' },
+     ascent: { input: 'output/climbAttemptAscent' , format: 'Altitude_Fivedigits' },
      ascent_time: { input: 'output/climbDurationAscent' , format: 'Duration_FourdigitsFixed' },
      ascent_descent_duration: { input: 'output/climbDurationAscentDescent' , format: 'Duration_FourdigitsFixed' },
      duration: { input: '/Activity/Activity/-1/Duration/Current', format: 'Duration_Training' }
@@ -82,7 +86,7 @@ function evaluate(input, output) {
       // Save the data of number of times you make a route or ascent/descent in indoor climbing into SA.
       id: 'climbAttempts',
       name: "Climb attempts",
-      format: 'Count_Fourdigits',
+      format: 'Altitude_Fivedigits',
       value: output.climbAttempts
      }
    ];
