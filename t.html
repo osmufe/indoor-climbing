@@ -1,106 +1,54 @@
 <uiView>
 
-          <!-- Exercise viewset (vs) subview -->
-          <div id="suuntoplus">
-        
-            <!-- logo/title and its bg -->
-            <div class="cm-fg" style="width:100%;height:25%">
-              <div class="sp-t-m p-hc" style="text-align:center;top:calc(60% - 50%e)">
-                INDOOR<br>
-                CLIMBING<br>
-              </div>
-            </div>
-        
-            <!-- vertical separator -->
-            <div class="cm-fg p-hc" style="top:32%;width:2px;height:43%;opacity:0.5"></div>
-        
-            <!-- Top Left -->
-            <!-- Ascent   -->
-        <:if test="{APP_IS_DISPLAY_LARGE}">
-            <div class="f-ico" style="top:calc(35% - 100%e);left:calc(26% - 50%e)">&#xF112;</div>
-            <div class="sp-d-s f-num" style="top:calc(41% - 50%e);left:calc(26% - 50%e);">
-              <eval input="{zapp_ascent_input}" outputFormat="{zapp_ascent_format}" default="--" />
-            </div>
-          </:if>
-          <:else>
-            <div style="top:26%;left:3%;width:46%;height:30%">
-              <div class="sp-d-s p-hc sp-vc">
-                <span class="f-ico" style="padding-right:4px">&#xF112;</span>
-                <span class="sp-d-s f-num">
-                  <eval input="{zapp_ascent_input}" outputFormat="{zapp_ascent_format}}" default="--" />
-                </span>
-              </div>
-            </div>
-          </:else>
-        
-            <!-- top right -->
-            <!--  Time Duration of Ascent  -->
-        <:if test="{APP_IS_DISPLAY_LARGE}">    
-            <div class="f-ico" style="top:calc(35% - 100%e);left:calc(74% - 50%e);">&#xF114;</div>
-            <div class="sp-d-m f-num" style="top:calc(41% - 50%e);left:calc(74% - 50%e);">
-              <eval input="{zapp_ascent_time_input}" outputFormat="{zapp_ascent_time_format}" default="--" />
-            </div>
-          </:if>
-          <:else>
-            <div style="top:26%;left:51%;width:46%;height:30%">
-               <div class="p-hc sp-vc">
-                <span class="sp-d-s f-num">
-                 <eval input="{zapp_ascent_time_input}" outputFormat="{zapp_ascent_time_format}" default="--" />
-                 </span>
-                 <span class="f-ico" style="padding-left:4px">&#xF114;</span>
-               </div>
-             </div>   
-        </:else>
-        
-        
-            <!-- middle left -->
-            <!--  Number of Ascents  -->
-        <:if test="{APP_IS_DISPLAY_LARGE}">    
-            <div class="f-ico" style="top:calc(60% - 100%e);left:calc(26% - 50%e)">&#xF265;</div>
-            <div class="sp-d-s f-num" style="top:calc(66% - 50%e);left:calc(26% - 50%e)">
-              <eval input="{zapp_ascents_input}" outputFormat="{zapp_ascents_format}" default="--" />
-            </div>
-        </:if>
-        <:else>
-            <div style="top:48%;left:5%;width:43%;height:30%">
-              <div class="p-hc sp-vc">
-                <span class="f-ico" style="padding-right:4px">&#xF265;</span>
-                <span class="sp-d-s f-num">
-                  <eval input="{zapp_ascents_input}" outputFormat="{zapp_ascents_format}" default="--" />
-                </span>
-              </div>
-            </div>
-        </:else>
-          
-        
-            <!-- middle right -->
-            <!--  Time Duration of Ascent & Descent -->
-        <:if test="{APP_IS_DISPLAY_LARGE}">    
-            <div class="f-ico" style="top:calc(60% - 100%e);left:calc(74% - 50%e)">&#xF100;</div>
-            <div class="sp-d-s f-num" style="top:calc(66% - 50%e);left:calc(74% - 50%e)">
-              <eval input="{zapp_ascent_descent_duration_input}" outputFormat="{zapp_ascent_descent_duration_format}" default="--" />
-            </div>
-        </:if>
-        <:else>
-            <div style="top:48%;left:51%;width:48%;height:30%">
-              <div class="p-hc sp-vc">
-                <span class="sp-d-s f-num">
-                  <eval input="{zapp_ascent_descent_duration_input}" outputFormat="{zapp_ascent_descent_duration_format}" default="--" />
-                </span>
-                <span class="f-ico" style="padding-left:4px">&#xF100;</span>
-              </div>
-            </div>
-        </:else>
-        
-            <!-- Tiempo empleado en el ascenso actual -->
-        
-            <!-- bottom middle -->
-            <!--  Workout Duration -->
-            <div class="sp-d-s f-num p-hc" style="top:calc(86% - 50%e)">
-             <eval input="{zapp_duration_input}" outputFormat="{zapp_duration_format}" default="--" />
-            </div>
-            
-          </div>
-        
-        </uiView>
-        
+  <div id="suuntoplus">
+
+    <!-- logo/title and its bg -->
+    <div class="cm-fg" style="width:100%;height:25%">
+      <div class="sp-t-m p-hc" style="text-align:center;top:calc(55% - 50%e)">
+        INDOOR<br>
+        CLIMBING<br>
+      </div>
+    </div>
+
+    <!-- vertical separator -->
+    <div class="cm-fg p-hc" style="top:32%;width:2px;height:43%;opacity:2"></div>
+
+    <!-- Top Left -->
+    <!-- Ascent   -->
+    <div class="f-ico" style="top:calc(35% - 100%e);left:calc(30% - 50%e)">&#xF112;</div>
+    <div class="cm-mid sp-t-s" style="top:calc(45% - 100%e);left:calc(40% - 50%e)">m</div>
+    <div class="sp-d-s f-num" style="top:calc(42% - 50%e);left:calc(30% - 50%e);">
+      <eval input="{zapp_ascent_input}" outputFormat="{zapp_ascent_format}" default="--" />
+    </div>
+
+    <!-- top right -->
+    <!--  Time Duration of Ascent  -->
+    <div class="f-ico" style="top:calc(35% - 100%e);left:calc(74% - 50%e);">&#xF114;</div>
+    <div class="cm-mid sp-t-s" style="top:calc(45% - 100%e);left:calc(40% - 50%e)">m</div>
+    <div class="sp-d-s f-num" style="top:calc(42% - 50%e);left:calc(74% - 50%e);">
+      <eval input="{zapp_ascent_time_input}" outputFormat="{zapp_ascent_time_format}" default="--" />
+    </div>
+
+    <!-- middle left -->
+    <!--  Time Duration of Ascent & Descent -->
+    <div class="f-ico" style="top:calc(62% - 100%e);left:calc(30% - 50%e);">&#xF265;</div>
+    <div class="sp-d-s f-num" style="top:calc(68% - 50%e);left:calc(30% - 50%e);">
+      <eval input="{zapp_ascents_input}" outputFormat="{zapp_ascents_format}" default="--" />
+    </div>
+
+    <!-- middle right -->
+    <!--  Time Duration of Ascent & Descent -->
+    <div class="f-ico" style="top:calc(62% - 100%e);left:calc(74% - 50%e);">&#xF100;</div>
+    <div class="sp-d-s f-num" style="top:calc(68% - 50%e);left:calc(74% - 50%e);">
+      <eval input="{zapp_ascent_descent_duration_input}" outputFormat="{zapp_ascent_descent_duration_format}" default="--" />
+    </div>
+
+    <!-- bottom middle -->
+    <!--  Workout Duration -->
+    <div class="sp-d-s f-num p-hc" style="top:calc(86% - 50%e)">
+      <eval input="{zapp_duration_input}" outputFormat="{zapp_duration_format}" default="--" />
+     </div>
+
+  </div>
+
+</uiView>
