@@ -1,3 +1,16 @@
+/*
+ function onLap() { trace('--- onLap ---'); }
+ function onAutoLap() { trace('--- onAutoLap ---'); }
+ function onInterval() { trace('--- onInterval ---'); }
+ function onPoolLength() { trace('--- onPoolLength ---'); }
+ function onExerciseStart() { trace('--- onExerciseStart ---'); }
+ function onExercisePause() { trace('--- onExercisePause ---'); }
+ function onExerciseContinue() { trace('--- onExerciseContinue ---'); }
+ function onExerciseEnd() { trace('--- onExerciseEnd ---'); }
+ function onExercisePause() { trace('--- onExerciseEnd ---'); }
+ function onExerciseContinue() { trace('--- onExerciseEnd ---'); }
+ */
+
 // Output var climbAttempts: Number of times you make a route or ascent/descent in indoor climbing.
 // Output var climbDurationAscentDescent: The time it takes to complete a route or ascent/descent in indoor climbing.
 // Output var climbDurationAscent: The ascent in meters in indoor climbing.
@@ -51,19 +64,15 @@ function evaluate(input, output) {
    output.climbAttemptAscent = 0;
    climbAttemptDescent = 0;  
  }
- 
- /*
- function onLap() { trace('--- onLap ---'); }
- function onAutoLap() { trace('--- onAutoLap ---'); }
- function onInterval() { trace('--- onInterval ---'); }
- function onPoolLength() { trace('--- onPoolLength ---'); }
- function onExerciseStart() { trace('--- onExerciseStart ---'); }
- function onExercisePause() { trace('--- onExercisePause ---'); }
- function onExerciseContinue() { trace('--- onExerciseContinue ---'); }
- function onExerciseEnd() { trace('--- onExerciseEnd ---'); }
- function onExercisePause() { trace('--- onExerciseEnd ---'); }
- function onExerciseContinue() { trace('--- onExerciseEnd ---'); }
- */
+
+ function onLap(input, output) {
+   // Initializing Variables for new Ascent
+   output.climbAttemptAscent = 0;
+   climbAttemptDescent = 0;
+   climbTotalAscent = input.AscentMeters.toFixed(0);
+   climbTotalDescent = input.DescentMeters.toFixed(0);
+   output.climbAttempts = output.climbAttempts + 1
+ }
  
  function getUserInterface() {
    return {
