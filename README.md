@@ -5,7 +5,10 @@ This app is designed to show the meters climbed on each Ascent/Descent or route 
 
 <img src="Small.png " width="150" height="150"> <img src="Medium.png " width="150" height="150"> <img src="Medium UI2.png " width="150" height="150"> <img src="Medium UI2 Plus.png " width="150" height="150"> <img src="Large.png " width="150" height="150">
 
-<span style="color: green"> Some green text </span>
+
+## To be Fixing:
+  - The Screen Medium UI2 fix the position of icons
+  - The Medium UI2 Plus fix the position of icons
 
 ## To be improve:
   - Change the name of the variable used to store the number of indoor climbing accents in the SA.
