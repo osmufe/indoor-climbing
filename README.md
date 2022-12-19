@@ -5,10 +5,7 @@ This app is designed to show the meters climbed on each Ascent/Descent or route 
 
 <img src="Small.png " width="150" height="150"> <img src="Medium.png " width="150" height="150"> <img src="Medium UI2.png " width="150" height="150"> <img src="Medium UI2 Plus.png " width="150" height="150"> <img src="Large.png " width="150" height="150">
 
-
-
-
-
+<span style="color: green"> Some green text </span>
 
 ## To be improve:
   - Change the name of the variable used to store the number of indoor climbing accents in the SA.
@@ -17,3 +14,7 @@ This app is designed to show the meters climbed on each Ascent/Descent or route 
 ## I will Try to do it if possible:
   - Add an inclination data , and if is posible save the inclination dada for each lap.
   - 15 different grading scales : https://www.guidedolomiti.com/en/rock-climbing-grades/
+
+---
+### :fire: My Stats :
+[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=osmufe&theme=submarine-flowers&hide_border=true&date_format=j%20M%5B%20Y%5D&mode=weekly&border=DD2727)](https://git.io/streak-stats)
