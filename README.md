@@ -16,6 +16,7 @@ TThis app is designed to show the meters climbed on each Ascent/Descent or climb
   #### SA Summary Outputs
   <img src="SA_Metrics.jpg" width="35%" height="35%">
    <br/>
+   
 ## To be improve:
   - Add a second condition to count the number of ascents/descents, use for example if the descent time is not increased for a few seconds. 
 
