@@ -36,7 +36,10 @@
       "name": "climbAttemptAscent"
     },
     {
-      "name": "climbDurationAscent"
+      "name": "climbDurationAscent",
+      "log": true,
+      "shownName": "Duration Ascent",
+      "format": "Duration_Fourdigits"     
     },
     {
       "name": "climbDurationAscentDescent",
