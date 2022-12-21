@@ -28,13 +28,6 @@ var climbAttemptDescent, climbTotalAscent, climbTotalDescent, climbDurationDesce
 
 function evaluate(input, output) {
    if ((output.climbAttemptAscent == climbAttemptDescent &&  output.climbAttemptAscent != 0) || (output.climbAttemptAscent == climbAttemptDescent &&  climbAttemptDescent != 0)) {
-     output.climbAttempts = output.climbAttempts + 1
- 
-     climbTotalAscent = input.AscentMeters.toFixed(0);
-     climbTotalDescent = input.DescentMeters.toFixed(0);
-
-     output.climbAttemptAscent = 0;
-     climbAttemptDescent = 0;
      // Trigger lap once
      $.put("/Activity/Trigger", 0);
    }
@@ -45,6 +38,7 @@ function evaluate(input, output) {
     climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
     output.climbDurationAscent = input.DurationAscent;
     climbDurationDescent = input.DurationDescent;
+    // Use this var to save the data on SA for each lap(if is possible)  
     output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
    } 
    //output.climbAttempts = output.climbAttempts +1;
@@ -93,10 +87,11 @@ function evaluate(input, output) {
      {
       // Save the data of number of times you make a route or ascent/descent in indoor climbing into SA.
       id: 'climbAttempts',
-      name: "Climb attempts",
-      format: 'Altitude_Fivedigits',
+      name: "Number of Ascent",
+      format: 'Count_Threedigits',
       value: output.climbAttempts
-     }
+     },
+
    ];
  }
  

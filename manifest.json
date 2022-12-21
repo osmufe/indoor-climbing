@@ -39,7 +39,10 @@
       "name": "climbDurationAscent"
     },
     {
-      "name": "climbDurationAscentDescent"
+      "name": "climbDurationAscentDescent",
+      "log": true,
+      "shownName": "Duration Ascent Descent",
+      "format": "Duration_Fourdigits"
     }
   ],
   "template": [
