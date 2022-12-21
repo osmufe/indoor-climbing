@@ -14,7 +14,8 @@ TThis app is designed to show the meters climbed on each Ascent/Descent or climb
    <br/>
    
   #### SA Summary Outputs
-
+  <img src="SA_Metrics.jpg" width="35%" height="35%">
+   <br/>
 <br/>
 
 ## To be Fixing:
