@@ -6,12 +6,16 @@ TThis app is designed to show the meters climbed on each Ascent/Descent or climb
 ### Screen Design:
 <img src="Small.png " width="150" height="150"> <img src="Medium.png " width="150" height="150"> <img src="Medium UI2.png " width="150" height="150"> <img src="Medium UI2 Plus.png " width="150" height="150"> <img src="Large.png " width="150" height="150">
 
+<br/>
+ 
 ### SA Outputs:
   #### Suunto Plus Metrics to analize later in SA
   <img src="SuuntoPlusMetric.jpg" width="35%" height="35%">
-  
+   <br/>
+   
   #### SA Summary Outputs
 
+ <br/>
 ## To be Fixing:
   - The Screen Medium UI2 fix the position of icons
   - The Medium UI2 Plus fix the position of icons
