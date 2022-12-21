@@ -15,7 +15,8 @@ TThis app is designed to show the meters climbed on each Ascent/Descent or climb
    
   #### SA Summary Outputs
 
- <br/>
+<br/>
+
 ## To be Fixing:
   - The Screen Medium UI2 fix the position of icons
   - The Medium UI2 Plus fix the position of icons
