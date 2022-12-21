@@ -26,7 +26,7 @@ TThis app is designed to show the meters climbed on each Ascent/Descent or climb
   - Add a second condition to count the number of ascents/descents, use for example if the descent time is not increased for a few seconds. 
 
 ## I will Try to do it if possible:
-  - Add an inclination data , and if is posible save the inclination dada for each lap.
+  - Add an inclination data , and if is posible save the inclination dada for each lap(Maybe not possible but I will tried to make some similar)
   - 15 different grading scales : https://www.guidedolomiti.com/en/rock-climbing-grades/
 
 ---
