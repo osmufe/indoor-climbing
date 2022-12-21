@@ -33,18 +33,14 @@ function evaluate(input, output) {
    }
    
    if (input.AscentMeters != null || input.DescentMeters != null) {
-    // .toFixed(0) Without decimals
-    output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
-    climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
-    output.climbDurationAscent = input.DurationAscent;
-    climbDurationDescent = input.DurationDescent;
-    // Use this var to save the data on SA for each lap(if is possible)  
+     // .toFixed(0) Without decimals
+     output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
+     climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
+     output.climbDurationAscent = input.DurationAscent;
+     climbDurationDescent = input.DurationDescent;
+     // Use this var to save the data on SA for each lap(if is possible)  
     output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
    } 
-   //output.climbAttempts = output.climbAttempts +1;
-   //output.climbAttemptAscent = output.climbAttemptAscent +1;
-   //output.climbDurationAscent = 60;
-   //output.climbDurationDescent = 62;
  }
  
  function onLoad(input, output) {
