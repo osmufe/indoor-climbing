@@ -26,14 +26,13 @@
 
 var climbAttemptDescent, climbTotalAscent, climbTotalDescent, climbDurationDescent;
 
-function evaluate(input, output) {
-  
-   if ((output.climbAttemptAscent == climbAttemptDescent &&  output.climbAttemptAscent != 0) || (output.climbAttemptAscent == climbAttemptDescent &&  climbAttemptDescent != 0)) {
+function evaluate(input, output) {  
+   if (((output.climbAttemptAscent == climbAttemptDescent) &&  (output.climbAttemptAscent != 0)) 
+   || ((output.climbAttemptAscent == climbAttemptDescent) &&  (climbAttemptDescent != 0))) {
      // Trigger lap once
      $.put("/Activity/Trigger", 0);
    }
-   
-   if (input.AscentMeters != null || input.DescentMeters != null) {
+   if ((input.AscentMeters != null) || (input.DescentMeters != null)) {
      // .toFixed(0) Without decimals
      output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
      climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
@@ -41,10 +40,10 @@ function evaluate(input, output) {
      climbDurationDescent = input.DurationDescent;
      // Use this var to save the data on SA for each lap 
     output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
-   } 
+   }
  }
  
- function onLoad(input, output) {
+ function onExerciseStart(input, output) {
    // Initializing Variables 
    output.climbAttempts = 0;
    output.climbDurationAscentDescent = 0;
@@ -65,7 +64,7 @@ function evaluate(input, output) {
   climbDurationDescent = input.DurationDescent;
   // Use this var to save the data on SA for each lap
   output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
-
+  unload("_cm");
    // Initializing Variables for new Ascent
    output.climbAttemptAscent = 0;
    climbAttemptDescent = 0;
@@ -77,9 +76,9 @@ function evaluate(input, output) {
  function getUserInterface() {
    return {
      template: 't',
-     ascents: { input: 'output/climbAttempts', format: 'Count_Fourdigits' },
-     ascent: { input: 'output/climbAttemptAscent' , format: 'Count_Fourdigits' },
-     ascent_time: { input: 'output/climbDurationAscent' , format: 'Duration_Fourdigits' },
+     number_ascents: { input: 'output/climbAttempts', format: 'Count_Fourdigits' },
+     ascent: { input: '/Fusion/Altitude/Ascent' , format: 'Count_Fourdigits' },
+     ascent_time: { input: '/Fusion/Altitude/AscentTime' , format: 'Duration_Fourdigits' },
      ascent_descent_duration: { input: 'output/climbDurationAscentDescent' , format: 'Duration_Fourdigits' },
      duration: { input: '/Activity/Activity/-1/Duration/Current', format: 'Duration_Training' }
    };
