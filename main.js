@@ -64,7 +64,6 @@ function evaluate(input, output) {
   climbDurationDescent = input.DurationDescent;
   // Use this var to save the data on SA for each lap
   output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
-  unload("_cm");
    // Initializing Variables for new Ascent
    output.climbAttemptAscent = 0;
    climbAttemptDescent = 0;
