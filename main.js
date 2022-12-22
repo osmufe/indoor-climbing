@@ -76,8 +76,8 @@ function evaluate(input, output) {
    return {
      template: 't',
      number_ascents: { input: 'output/climbAttempts', format: 'Count_Fourdigits' },
-     ascent: { input: '/Fusion/Altitude/Ascent' , format: 'Count_Fourdigits' },
-     ascent_time: { input: '/Fusion/Altitude/AscentTime' , format: 'Duration_Fourdigits' },
+     ascent: { input: 'output/climbAttemptAscent' , format: 'Count_Fourdigits' },
+     ascent_time: { input: 'output/climbDurationAscent' , format: 'Duration_Fourdigits' },
      ascent_descent_duration: { input: 'output/climbDurationAscentDescent' , format: 'Duration_Fourdigits' },
      duration: { input: '/Activity/Activity/-1/Duration/Current', format: 'Duration_Training' }
    };
