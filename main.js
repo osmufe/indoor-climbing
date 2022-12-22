@@ -32,14 +32,15 @@ function evaluate(input, output) {
      // Trigger lap once
      $.put("/Activity/Trigger", 0);
    }
-   if ((input.AscentMeters != null) || (input.DescentMeters != null)) {
-     // .toFixed(0) Without decimals
-     output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
-     climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
+   // .toFixed(0) Without decimals & Update the Ascent&Descent Meters if change
+   output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
+   climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
+   
+   if ((output.climbAttemptAscent > 0) || (climbAttemptDescent > 0)) {
      output.climbDurationAscent = input.DurationAscent;
      climbDurationDescent = input.DurationDescent;
      // Use this var to save the data on SA for each lap 
-    output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
+     output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
    }
  }
  
@@ -52,7 +53,7 @@ function evaluate(input, output) {
    climbTotalAscent = 0;
    climbTotalDescent = 0;
    output.climbAttemptAscent = 0;
-   climbAttemptDescent = 0;  
+   climbAttemptDescent = 0;
  }
 
  function onLap(input, output) {
@@ -69,7 +70,7 @@ function evaluate(input, output) {
    climbAttemptDescent = 0;
    climbTotalAscent = input.AscentMeters.toFixed(0);
    climbTotalDescent = input.DescentMeters.toFixed(0);
-   output.climbAttempts = output.climbAttempts + 1
+   output.climbAttempts = output.climbAttempts + 1;
  }
  
  function getUserInterface() {
