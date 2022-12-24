@@ -73,7 +73,7 @@ function evaluate(input, output) {
    output.climbAttempts = output.climbAttempts + 1;
  }
  
- function getUserInterface() {
+ function getUserInterface(input, output) {
    return {
      template: 't',
      number_ascents: { input: 'output/climbAttempts', format: 'Count_Fourdigits' },
