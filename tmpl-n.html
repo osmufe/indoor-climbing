@@ -1,0 +1,60 @@
+<uiView>
+  <div id="suuntoplus">
+    <!-- Topmost: title field -->
+    <div class="cm-fg f-t-l" style="width:100%;height:25%;">
+      <div style="top:calc(63% - 100%e);left:calc(71% - 100%e);">INDOOR</div>
+      <div style="top:calc(104% - 100%e);left:calc(76% - 100%e);">CLIMBING</div>
+    </div>
+    <!-- vertical separator -->
+    <div class="cm-fg p-hc" style="top:30%;width:2px;height:43%;opacity:0.4"></div>
+    <!-- Field just under the title, left side -->
+    <!-- Ascent -->   
+    <div style="top:24%;left:8%;width:46%;height:30%">
+       <div class="f-d-m p-m">
+        <span class="f-ico" style="padding-right:4px">&#xF112;</span>
+        <span class="f-num">
+          <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
+          <eval input="/Zapp/{zapp_index}/Output/climbAttemptAscent" outputFormat="Count_Threedigits" default="--" />
+        </span>
+      </div>
+    </div>   
+    <!-- Field just under the title, right side -->
+    <!-- Time Duration of Ascent -->
+    <div style="top:24%;left:52%;width:46%;height:30%">
+      <div class="f-d-m p-m">
+       <span class="f-num">
+         <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
+         <eval input="/Zapp/{zapp_index}/Output/climbDurationAscent" outputFormat="Duration_FourdigitsFixed" default="--" />
+       </span>
+       <span class="f-ico">&#xF114;</span>
+     </div>
+   </div> 
+    <!-- middle left side -->
+    <!-- Number of Ascents -->
+    <div style="top:46%;left:8%;width:46%;height:30%">
+      <div class="f-d-m p-m">
+       <span class="f-ico" style="padding-right:4px">&#xF265;</span>
+       <span class="f-num">
+         <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
+         <eval input="/Zapp/{zapp_index}/Output/climbAttempts" outputFormat="Count_Threedigits" default="--" />
+       </span>
+     </div>
+   </div>
+    <!-- middle right side -->
+    <!-- Angle Ascent or Time Duration of Ascent & Descent -->
+    <div style="top:46%;left:45%;width:46%;height:30%">
+      <div class="f-d-m p-m">
+       <span class="f-num">
+         <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
+         <eval input="/Zapp/{zapp_index}/Output/climbAngleAscent" outputFormat="Count_Threedigits" default="--" />
+       </span>
+       <span class="sp-d-s">°</span>
+     </div>
+   </div>
+   <!-- bottom middle -->
+   <!--  Workout Duration -->
+   <div class="f-d-m f-num p-hc" style="top:calc(86% - 50%e)">
+      <eval input="/Activity/Activity/-1/Duration/Current" outputFormat="Duration_Training" default="--" />
+   </div>
+  </div>
+</uiView>
