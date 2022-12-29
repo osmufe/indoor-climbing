@@ -15,10 +15,7 @@ This app is designed to show the meters climbed on each Ascent&Descent or climbi
    
   #### SA Summary Outputs
   <img src="SA_Metrics.jpg" width="35%" height="35%">
-   <br/>
-   
-## To be improve:
-  - More precision in climbAngleAscent, because it uses the distance without GSP.
+   <br/>   
 
 ## I will Try to do it if possible:
   - 15 different grading scales : https://www.guidedolomiti.com/en/rock-climbing-grades/

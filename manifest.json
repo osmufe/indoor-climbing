@@ -2,7 +2,7 @@
   "name": "Indoor Climbing",
   "version": "1.0",
   "author": "Oscar Muñoz Ferriz",
-  "description": "Ascents,Durations,Angle",
+  "description": "Ascents,Durations",
   "type": "feature",
   "usage": "workout",
   "modificationTime": 1672223064, 
@@ -26,11 +26,6 @@
       "name": "DescentMeters",
       "source": "/Fusion/Altitude/Descent",
       "type": "subscribe"
-    },
-    {
-      "name": "Distance",
-      "source": "/Activity/Current/Distance",
-      "type": "subscribe"
     }
   ],
   "out": [
@@ -51,12 +46,6 @@
       "log": true,
       "shownName": "Duration Ascent Descent",
       "format": "Duration_Fourdigits"
-    },
-    {
-      "name": "climbAngleAscent",
-      "log": true,
-      "shownName": "Angle of Ascent",
-      "format": "Count_Threedigits"
     }
   ],
   "template": [

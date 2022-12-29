@@ -24,8 +24,7 @@
 // Watch var AscentMeters: Total Ascent meters in the workout.
 // Watch var DescentMeters: Total Descent meters in the workout.
 
-var currentTemplate, climbAttemptDescent, climbTotalAscent, climbTotalDescent, climbDurationDescent,
-    climbDistanceAttempAscent, climbDistanceStartAttempAscent, climbRightTriangle;
+var currentTemplate, climbAttemptDescent, climbTotalAscent, climbTotalDescent, climbDurationDescent;
 
 function evaluate(input, output) {  
   if (((output.climbAttemptAscent == climbAttemptDescent) &&  (output.climbAttemptAscent != 0)) 
@@ -40,17 +39,6 @@ function evaluate(input, output) {
   // Save the Distance in meters when ascensing because later generate the angle of each Attempt
 
   if ((output.climbAttemptAscent > 0) && (climbAttemptDescent == 0)) {
-    if (climbDistanceStartAttempAscent == 0) {
-     // Save the distance when start the Ascent
-     climbDistanceStartAttempAscent = input.Distance;
-    } else {
-     // Save the Distance in meters when ascensing because later generate the angle of each Attempt
-     climbDistanceAttempAscent = input.Distance - climbDistanceStartAttempAscent;
-     // Pythagoras theorem ( Calc the Right Triangle )
-     climbRightTriangle = Math.sqrt(Math.pow(climbDistanceAttempAscent, 2) - Math.pow(output.climbAttemptAscent, 2));
-     // Calculate the angle of Cos
-     output.climbAngleAscent = Math.acos((Math.pow(climbDistanceAttempAscent, 2) + Math.pow(output.climbAttemptAscent, 2) - Math.pow(climbRightTriangle, 2))/(2*climbDistanceAttempAscent*output.climbAttemptAscent));
-    }
     // Condition that you can make actions in Ascent period
     output.climbDurationAscent = input.DurationAscent;
     // Use this var to save the data on SA for each lap 
@@ -74,10 +62,6 @@ function onExerciseStart(input, output) {
   climbTotalDescent = 0;
   output.climbAttemptAscent = 0;
   climbAttemptDescent = 0;
-  climbDistanceAttempAscent = 0;
-  climbDistanceStartAttempAscent = 0;
-  output.climbAngleAscent = 0;
-  climbRightTriangle = 0;
 }
 
 function onLap(input, output) { 
@@ -90,17 +74,11 @@ function onLap(input, output) {
     climbDurationDescent = input.DurationDescent;
     // Use this var to save the data on SA for each lap
     output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
-    // Save the Distance in meters when ascensing because later generate the angle of each Attempt
-   climbDistanceAttempAscent = input.Distance - climbDistanceStartAttempAscent;
   }
 
   // Initializing Variables for new Ascent and increase output.climbAttempts Variable
   output.climbAttemptAscent = 0;
   climbAttemptDescent = 0;
-  climbDistanceAttempAscent = 0;
-  climbDistanceStartAttempAscent = 0;
-  output.climbAngleAscent = 0;
-  climbRightTriangle = 0;
   climbTotalAscent = input.AscentMeters.toFixed(0);
   climbTotalDescent = input.DescentMeters.toFixed(0);
   output.climbAttempts = output.climbAttempts + 1;
