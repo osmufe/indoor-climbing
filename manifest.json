@@ -5,7 +5,7 @@
   "description": "Ascents,Durations",
   "type": "feature",
   "usage": "workout",
-  "modificationTime": 1672223064, 
+  "modificationTime": 1672314950, 
   "in": [
     {
       "name": "DurationAscent",
