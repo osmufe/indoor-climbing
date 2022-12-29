@@ -1,5 +1,5 @@
 # Indoor Climbing
-Suunto App Indoor Climbing 1.0 Version
+Suunto App Indoor Climbing 2.0 Version
 
 This app is designed to show the meters climbed on each Ascent/Descent or climbing route without gps(Indoor Climbing). It shows the time spent on the ascent, ascent and descent, the meters climbed and the number of attempts/runs. Saves in the SA the number of times we completed ascent and descent in a training. And it generates a lap every time you finish the route or ascent/descent (you can also force that you have finished the ascent/descent or route by pressing the lap button).
 
