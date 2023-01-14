@@ -18,6 +18,7 @@ This app is designed to show the meters climbed on each Ascent&Descent or climbi
    <br/>   
 
 ## To fix Assap:
+  - The display icon: Ascent and descent time (which icon represents for suunto)
   - Today 05/02/2024 I tested it in a rock climbing wall with low height, and the problem is that if it is less than 3 meters it does not count that height (see how to do it).
 ## I will Try to do it if possible:
   - 15 different grading scales : https://www.guidedolomiti.com/en/rock-climbing-grades/
