@@ -53,7 +53,6 @@ function evaluate(input, output) {
  
 function onExerciseStart(input, output) {
   // Initializing Variables 
-  currentTemplate = 'tmpl-{zapp_disp}';
   output.climbAttempts = 0;
   output.climbDurationAscentDescent = 0;
   output.climbDurationAscent = 0;
@@ -86,7 +85,7 @@ function onLap(input, output) {
  
  function getUserInterface(input, output) {
    return {
-    template: currentTemplate
+    template: 't'
    };
  }
  
@@ -102,7 +101,6 @@ function onLap(input, output) {
       format: 'Count_Threedigits',
       value: output.climbAttempts
      },
-
    ];
  }
  

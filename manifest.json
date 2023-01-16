@@ -1,11 +1,11 @@
 {
-  "name": "Indoor Climbing",
+  "name": "Indoor Climbing & Stair Training",
   "version": "1.0",
   "author": "Oscar Muñoz Ferriz",
   "description": "Ascents,Durations",
   "type": "feature",
   "usage": "workout",
-  "modificationTime": 1672314950, 
+  "modificationTime": 1673717928, 
   "in": [
     {
       "name": "DurationAscent",
@@ -49,9 +49,6 @@
     }
   ],
   "template": [
-    { "name": "tmpl-s.html" },
-    { "name": "tmpl-m.html" },
-    { "name": "tmpl-n.html" },
-    { "name": "tmpl-l.html" }
+    { "name": "t.html" }
   ]
 }
