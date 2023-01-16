@@ -9,9 +9,8 @@
        <div class="cm-fg p-hc" style="top:30%;width:2px;height:43%;opacity:0.6"></div>
        <!-- Field just under the title, left side -->
        <!-- Ascent -->
-       <:if test="{APP_IS_DISPLAY_LARGE}">
           <div style="top:30%;left:18%;width:46%;height:30%">
-             <div class="f-l">
+             <div class="sp-d-m">
                 <span class="f-ico" style="padding-right:4px">&#xF112;</span>
                 <span class="f-num">
                    <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
@@ -19,23 +18,10 @@
                 </span>
              </div>
           </div>
-       </:if>
-       <:else>
-          <div style="top:26%;left:8%;width:46%;height:30%">
-             <div class="sp-d-s p-m">
-                <span class="f-ico" style="padding-right:4px">&#xF112;</span>
-                <span class="f-num">
-                   <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
-                   <eval input="/Zapp/{zapp_index}/Output/climbAttemptAscent" outputFormat="Count_Threedigits" default="--" />
-                </span>
-             </div>
-          </div>
-       </:else>
        <!-- Field just under the title, right side -->
        <!-- Time Duration of Ascent -->
-       <:if test="{APP_IS_DISPLAY_LARGE}">
           <div style="top:30%;left:52%;width:46%;height:30%">
-             <div class="f-l">
+             <div class="sp-d-m">
                 <span class="f-num">
                    <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
                    <eval input="/Zapp/{zapp_index}/Output/climbDurationAscent" outputFormat="Duration_FourdigitsFixed" default="--" />
@@ -43,23 +29,10 @@
                 <span class="f-ico">&#xF114;</span>
              </div>
           </div>
-       </:if>
-       <:else>
-          <div style="top:26%;left:52%;width:46%;height:30%">
-             <div class="sp-d-s p-m">
-                <span class="f-num">
-                   <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
-                   <eval input="/Zapp/{zapp_index}/Output/climbDurationAscent" outputFormat="Duration_FourdigitsFixed" default="--" />
-                </span>
-                <span class="f-ico">&#xF114;</span>
-             </div>
-          </div>
-       </:else>
        <!-- middle left side -->
        <!-- Number of Ascents -->
-       <:if test="{APP_IS_DISPLAY_LARGE}">
           <div style="top:52%;left:16%;width:46%;height:30%">
-             <div class="f-l">
+             <div class="sp-d-m">
                 <span class="f-ico" style="padding-right:4px">&#xF265;</span>
                 <span class="f-num">
                    <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
@@ -67,23 +40,10 @@
                 </span>
              </div>
           </div>
-       </:if>
-       <:else>
-          <div style="top:48%;left:8%;width:46%;height:30%">
-             <div class="sp-d-s p-m">
-                <span class="f-ico" style="padding-right:4px">&#xF265;</span>
-                <span class="f-num">
-                   <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
-                   <eval input="/Zapp/{zapp_index}/Output/climbAttempts" outputFormat="Count_Threedigits" default="--" />
-                </span>
-             </div>
-          </div>
-       </:else>
        <!-- middle right side -->
        <!-- Time Duration of Ascent & Descent -->
-       <:if test="{APP_IS_DISPLAY_LARGE}">
           <div style="top:52%;left:52%;width:46%;height:30%">
-             <div class="f-l">
+             <div class="sp-d-m">
                 <span class="f-num">
                    <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
                    <eval input="/Zapp/{zapp_index}/Output/climbDurationAscentDescent" outputFormat="Duration_FourdigitsFixed" default="--" />
@@ -91,21 +51,9 @@
                 <span class="f-ico">&#xF114;</span>
              </div>
           </div>
-       </:if>
-       <:else>
-          <div style="top:48%;left:52%;width:46%;height:30%">
-             <div class="sp-d-s p-m">
-                <span class="f-num">
-                   <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
-                   <eval input="/Zapp/{zapp_index}/Output/climbDurationAscentDescent" outputFormat="Duration_FourdigitsFixed" default="--" />
-                </span>
-                <span class="f-ico">&#xF114;</span>
-             </div>
-          </div>
-       </:else>
        <!-- Bottom text area -->
        <!--  Workout Duration -->
-       <div class="f-l f-d-m f-num p-hc" style="top:calc(86% - 50%e)">
+       <div class="sp-d-m f-d-m f-num p-hc" style="top:calc(84% - 50%e)">
           <eval input="/Activity/Activity/-1/Duration/Current" outputFormat="Duration_Training" default="--" />
        </div>
     </div>
