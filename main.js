@@ -34,9 +34,9 @@ function evaluate(input, output) {
     $.put("/Activity/Trigger", 0);
   }
 
-  // Math.trunc Without decimals & Update the Ascent&Descent Meters if change
-  output.climbAttemptAscent = Math.trunc(input.AscentMeters) - climbTotalAscent;
-  climbAttemptDescent = Math.trunc(input.DescentMeters) - climbTotalDescent;
+  // .toFixed(0) Without decimals & Update the Ascent&Descent Meters if change
+  output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
+  climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
   // Save the Distance in meters when ascensing because later generate the angle of each Attempt
 
   if ((output.climbAttemptAscent > 0) && (climbAttemptDescent == 0)) {
@@ -83,8 +83,8 @@ function onLap(input, output) {
   if (output.climbAttemptAscent != climbAttemptDescent) {
     // Collect the latest data
     // .toFixed(0) Without decimals
-    output.climbAttemptAscent = Math.trunc(input.AscentMeters) - climbTotalAscent;
-    climbAttemptDescent = Math.trunc(input.DescentMeters) - climbTotalDescent;
+    output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
+    climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
     output.climbDurationAscent = input.DurationAscent;
     climbDurationDescent = input.DurationDescent;
     // Use this var to save the data on SA for each lap
@@ -100,8 +100,8 @@ function onLap(input, output) {
   climbDistanceStartAttempAscent = 0;
   output.climbAngleAscent = 0;
   climbRightTriangle = 0;
-  climbTotalAscent = Math.trunc(input.AscentMeters);
-  climbTotalDescent = Math.trunc(input.DescentMeters);
+  climbTotalAscent = input.AscentMeters.toFixed(0);
+  climbTotalDescent = input.DescentMeters.toFixed(0);
   output.climbAttempts = output.climbAttempts + 1;
 }
  
