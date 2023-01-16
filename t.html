@@ -5,48 +5,42 @@
          <div style="left:calc(50% - 50%e);width:60%;bottom:-4%;">INDOOR CLIMBING</div>
       </div>
       <!-- vertical separator -->
-      <div class="cm-fg p-hc" style="top:32%;width:2px;height:45%;opacity:0.6"></div>
+      <div class="cm-fg p-hc" style="top:32%;width:2px;height:43%;opacity:0.6"></div>
       <!-- Field just under the title, left side -->
       <!-- Ascent -->
-      <div class="sp-vertical-center" style="top:31%;left:calc(16% - 50%e);">
-         <div class="f-num sp-d-m">
-            <span class="f-ico" style="padding-right:4px">&#xF112;</span>
-               <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
-               <eval input="/Zapp/{zapp_index}/Output/climbAttemptAscent" outputFormat="Count_Threedigits" default="--" />
-         </div>
+      <div class="sp-vertical-center" style="top:31%;left:calc(26% - 50%e);">
+         <span class="f-ico cm-mid" style="padding-right:5px">&#xF112;</span>
+         <span class="f-num sp-d-m">
+            <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
+            <eval input="/Zapp/{zapp_index}/Output/climbAttemptAscent" outputFormat="Count_Threedigits" default="--" />
+         </span>
       </div>
       <!-- Field just under the title, right side -->
       <!-- Time Duration of Ascent -->
-      <div class="sp-vertical-center" style="top:31%;left:calc(52% - 50%e);">
-         <div class="sp-d-m">
-            <span class="f-num">
-               <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
-               <eval input="/Zapp/{zapp_index}/Output/climbDurationAscent" outputFormat="Duration_FourdigitsFixed" default="--" />
-            </span>
-            <span class="f-ico">&#xF114;</span>
-         </div>
+      <div class="sp-vertical-center" style="top:31%;left:calc(76% - 50%e);">
+         <span class="f-num sp-d-m">
+            <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
+            <eval input="/Zapp/{zapp_index}/Output/climbDurationAscent" outputFormat="Duration_FourdigitsFixed" default="--" />
+         </span>
+         <span class="f-ico cm-mid" style="padding-right:5px">&#xF114;</span>
       </div>
       <!-- middle left side -->
       <!-- Number of Ascents -->
-      <div class="sp-vertical-center" style="top:54%;left:calc(16% - 50%e);">
-         <div class="sp-d-m">
-            <span class="f-ico" style="padding-right:4px">&#xF265;</span>
-            <span class="f-num">
-               <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
-               <eval input="/Zapp/{zapp_index}/Output/climbAttempts" outputFormat="Count_Threedigits" default="--" />
-            </span>
-         </div>
+      <div class="sp-vertical-center" style="top:52%;left:calc(25% - 50%e);">
+         <span class="f-ico cm-mid" style="padding-right:5px">&#xF265;</span>
+         <span class="f-num sp-d-m">
+            <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
+            <eval input="/Zapp/{zapp_index}/Output/climbAttempts" outputFormat="Count_Threedigits" default="--" />
+         </span>
       </div>
       <!-- middle right side -->
       <!-- Angle Ascent -->
-      <div class="sp-vertical-center" style="top:54%;left:calc(64% - 50%e);">
-         <div class="sp-d-m">
-            <span class="f-num">
-               <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
-               <eval input="/Zapp/{zapp_index}/Output/climbAngleAscent" outputFormat="Count_Threedigits" default="--" />
-            </span>
-            <span class="f-ico">&#xF262;</span>
-         </div>
+      <div class="sp-vertical-center" style="top:52%;left:calc(74% - 50%e);">
+         <span class="f-num sp-d-m">
+            <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
+            <eval input="/Zapp/{zapp_index}/Output/climbAngleAscent" outputFormat="Count_Threedigits" default="--" />
+         </span>
+         <span class="f-ico cm-mid" style="padding-right:5px">&#xF262;</span>
       </div>
       <!-- Bottom text area -->
       <!--  Workout Duration -->
