@@ -1,17 +1,16 @@
 <uiView>
    <div id="suuntoplus">
       <!-- Topmost: title field -->
-      <div class="cm-fg sp-t-l" style="width:100%;height:28%;text-align:center;">
-         <div style="left:calc(50% - 50%e);width:60%">INDOOR CLIMBING</div>
+      <div class="cm-fg sp-t-l" style="width:100%;height:30%;text-align:center;">
+         <div style="left:calc(50% - 50%e);width:60%;bottom:-4%;">INDOOR CLIMBING</div>
       </div>
       <!-- vertical separator -->
-      <div class="cm-fg p-hc" style="top:30%;width:2px;height:43%;opacity:0.6"></div>
+      <div class="cm-fg p-hc" style="top:32%;width:2px;height:43%;opacity:0.6"></div>
       <!-- Field just under the title, left side -->
       <!-- Ascent -->
-      <div style="top:30%;left:18%;width:46%;height:30%">
-         <div class="sp-d-m">
+      <div class="sp-vertical-center" style="top:31%;left:calc(16% - 50%e);">
+         <div class="f-num sp-d-m">
             <span class="f-ico" style="padding-right:4px">&#xF112;</span>
-            <span class="f-num">
                <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
                <eval input="/Zapp/{zapp_index}/Output/climbAttemptAscent" outputFormat="Count_Threedigits" default="--" />
             </span>
@@ -19,7 +18,7 @@
       </div>
       <!-- Field just under the title, right side -->
       <!-- Time Duration of Ascent -->
-      <div style="top:30%;left:52%;width:46%;height:30%">
+      <div class="sp-vertical-center" style="top:31%;left:calc(52% - 50%e);">
          <div class="sp-d-m">
             <span class="f-num">
                <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
@@ -30,7 +29,7 @@
       </div>
       <!-- middle left side -->
       <!-- Number of Ascents -->
-      <div style="top:52%;left:16%;width:46%;height:30%">
+      <div class="sp-vertical-center" style="top:52%;left:calc(16% - 50%e);">
          <div class="sp-d-m">
             <span class="f-ico" style="padding-right:4px">&#xF265;</span>
             <span class="f-num">
@@ -41,7 +40,7 @@
       </div>
       <!-- middle right side -->
       <!-- Time Duration of Ascent & Descent -->
-      <div style="top:52%;left:52%;width:46%;height:30%">
+      <div class="sp-vertical-center" style="top:52%;left:calc(52% - 50%e);">
          <div class="sp-d-m">
             <span class="f-num">
                <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
