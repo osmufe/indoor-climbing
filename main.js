@@ -49,7 +49,7 @@ function evaluate(input, output) {
      // Pythagoras theorem ( Calc the Right Triangle )
      climbRightTriangle = Math.sqrt(Math.pow(climbDistanceAttempAscent, 2) - Math.pow(output.climbAttemptAscent, 2));
      // Calculate the angle of Cos
-     output.climbAngleAscent = Math.acos((Math.pow(climbDistanceAttempAscent, 2) + Math.pow(output.climbAttemptAscent, 2) - Math.pow(climbRightTriangle, 2))/(2*climbDistanceAttempAscent*output.climbAttemptAscent));
+     output.climbAngleAscent = Math.acos(climbRightTriangle/climbDistanceAttempAscent)*(180/Math.PI);;
     }
     // Condition that you can make actions in Ascent period
     output.climbDurationAscent = input.DurationAscent;
