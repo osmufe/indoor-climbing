@@ -28,8 +28,8 @@ var currentTemplate, climbAttemptDescent, climbTotalAscent, climbTotalDescent, c
     climbDistanceAttempAscent, climbDistanceStartAttempAscent, climbRightTriangle;
 
 function evaluate(input, output) {  
-  if (((output.climbAttemptAscent == climbAttemptDescent) &&  (output.climbAttemptAscent > 0)) 
-  || ((output.climbAttemptAscent == climbAttemptDescent) &&  (climbAttemptDescent > 0))) {
+  if ((output.climbAttemptAscent <= climbAttemptDescent) && 
+   ((output.climbAttemptAscent > 0) || (climbAttemptDescent > 0))) {
     // Trigger lap once
     $.put("/Activity/Trigger", 0);
   }
