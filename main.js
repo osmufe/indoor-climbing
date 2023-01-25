@@ -10,45 +10,51 @@
  function onExercisePause() { trace('--- onExerciseEnd ---'); }
  function onExerciseContinue() { trace('--- onExerciseEnd ---'); }
  */
-
 // Output var climbAttempts: Number of times you make a route or ascent/descent in indoor climbing.
-// Output var climbDurationAscentDescent: The time it takes to complete a route or ascent/descent in indoor climbing.
+// Output var climbAttemptAscent: Ascent in meters of actual ascent or indoor climbing route.
 // Output var climbDurationAscent: The ascent in meters in indoor climbing.
-// main.js var climbDurationDescent: The time it takes to descend in indoor climbing.
+// Output var climbDurationAscentDescent: The time it takes to complete a route or ascent/descent in indoor climbing.
+// main.js var Ascending: Value True o Fasle to detect if is Ascending
+// main.js var Descending: Value True o Fasle to detect if is Descending
+// main.js var climbAttemptDescent: Descent in meters of actual descent or indoor climbing route.
 // main.js var climbTotalAscent: Total training climb minus current climb.
 // main.js var climbTotalDescent: Total training decrease minus current decrease.
-// Output var climbAttemptAscent: Ascent in meters of actual ascent or indoor climbing route.
-// main.js var climbAttemptDescent: Descent in meters of actual descent or indoor climbing route.
+// main.js var climbDurationDescent: The time it takes to descend in indoor climbing.
+// main.js var limbTotalDurationAscent: Total Time Duration Ascent in workout
+// main.js var climbTotalDurationDescent: Total Time Duration Descent in workout
 // Watch var DurationAscent: Total time in the workout that the watch calculate Ascent Time.
 // Watch var DurationDescent: Total time in the workout that the watch calculate Descent Time.
 // Watch var AscentMeters: Total Ascent meters in the workout.
 // Watch var DescentMeters: Total Descent meters in the workout.
 
-var currentTemplate, climbAttemptDescent, climbTotalAscent, climbTotalDescent, climbDurationDescent;
+var Ascending, Descending, climbAttemptDescent, climbTotalAscent, climbTotalDescent, climbDurationDescent,
+climbTotalDurationAscent, climbTotalDurationDescent;
 
 function evaluate(input, output) {  
-  if ((output.climbAttemptAscent <= climbAttemptDescent) && 
-   ((output.climbAttemptAscent > 0) || (climbAttemptDescent > 0))) {
-    // Trigger lap once
-    $.put("/Activity/Trigger", 0);
-  }
-
-  // .toFixed(0) Without decimals & Update the Ascent&Descent Meters if change
-  output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
-  climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
-  // Save the Distance in meters when ascensing because later generate the angle of each Attempt
-
+  output.climbAttemptAscent = input.AscentMeters - climbTotalAscent;
+  climbAttemptDescent = input.DescentMeters - climbTotalDescent;  
   if ((output.climbAttemptAscent > 0) && (climbAttemptDescent == 0)) {
     // Condition that you can make actions in Ascent period
-    output.climbDurationAscent = input.DurationAscent;
+    output.climbDurationAscent = input.DurationAscent - climbTotalDurationAscent;
+    Ascending = true;
     // Use this var to save the data on SA for each lap 
-    output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;     
-  } else if (climbAttemptDescent > 0) {
+    output.climbDurationAscentDescent = output.climbDurationAscent;     
+  } else if ((climbAttemptDescent > 0) && (output.climbAttemptAscent > 0)){
     // Condition that you can make actions in Descent period
-    climbDurationDescent = input.DurationDescent;
+    climbDurationDescent = input.DurationDescent - climbTotalDurationDescent;
     // Use this var to save the data on SA for each lap 
-    output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
+    output.climbDurationAscentDescent = output.climbDurationAscent + climbDurationDescent;
+    Descending = true;
+    Ascending = false;
+  }else {
+    climbTotalDescent = input.DescentMeters;
+    climbTotalDurationDescent = input.DurationDescent;
   }
+  if ((output.climbAttemptAscent <= climbAttemptDescent) && 
+  ((Ascending == false ) && (Descending == true))) {
+   // Trigger lap once
+   $.put("/Activity/Trigger", 0);
+ }
 }
  
 function onExerciseStart(input, output) {
@@ -61,26 +67,30 @@ function onExerciseStart(input, output) {
   climbTotalDescent = 0;
   output.climbAttemptAscent = 0;
   climbAttemptDescent = 0;
+  Ascending = 'false';
+  Descending = 'false';
+  climbTotalDurationDescent = 0;
+  climbTotalDurationAscent = 0;
 }
 
 function onLap(input, output) { 
-  if (output.climbAttemptAscent != climbAttemptDescent) {
-    // Collect the latest data
-    // .toFixed(0) Without decimals
-    output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
-    climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;
-    output.climbDurationAscent = input.DurationAscent;
-    climbDurationDescent = input.DurationDescent;
-    // Use this var to save the data on SA for each lap
-    output.climbDurationAscentDescent = input.DurationAscent + input.DurationDescent;
-  }
-
+  // Collect the latest data
+  climbDurationDescent = input.DurationDescent - climbTotalDurationDescent;
+  // Use this var to save the data on SA for each lap
+  output.climbDurationAscentDescent = output.climbDurationAscent + climbDurationDescent;
   // Initializing Variables for new Ascent and increase output.climbAttempts Variable
   output.climbAttemptAscent = 0;
   climbAttemptDescent = 0;
-  climbTotalAscent = input.AscentMeters.toFixed(0);
-  climbTotalDescent = input.DescentMeters.toFixed(0);
+  climbTotalAscent = input.AscentMeters;
+  climbTotalDescent = input.DescentMeters;
+  climbTotalDurationAscent = input.DurationDescent;
+  climbTotalDurationAscent =input.DurationAscent;
   output.climbAttempts = output.climbAttempts + 1;
+  Ascending = 'false';
+  Descending = 'false';
+  output.climbDurationAscentDescent = 0;
+  output.climbDurationAscent = 0;
+  climbDurationDescent = 0;
 }
  
  function getUserInterface(input, output) {
@@ -97,7 +107,7 @@ function onLap(input, output) {
      {
       // Save the data of number of times you make a route or ascent/descent in indoor climbing into SA.
       id: 'climbAttempts',
-      name: "Number of Ascent",
+      name: "Nº of Attempts",
       format: 'Count_Threedigits',
       value: output.climbAttempts
      },
