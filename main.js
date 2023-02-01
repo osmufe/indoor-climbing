@@ -26,13 +26,14 @@
 // Watch var DurationDescent: Total time in the workout that the watch calculate Descent Time.
 // Watch var AscentMeters: Total Ascent meters in the workout.
 // Watch var DescentMeters: Total Descent meters in the workout.
+// .toFixed(0) Without decimals
 
 var Ascending, Descending, climbAttemptDescent, climbTotalAscent, climbTotalDescent, climbDurationDescent,
 climbTotalDurationAscent, climbTotalDurationDescent;
 
 function evaluate(input, output) {  
-  output.climbAttemptAscent = input.AscentMeters - climbTotalAscent;
-  climbAttemptDescent = input.DescentMeters - climbTotalDescent;  
+  output.climbAttemptAscent = input.AscentMeters.toFixed(0) - climbTotalAscent;
+  climbAttemptDescent = input.DescentMeters.toFixed(0) - climbTotalDescent;  
   if ((output.climbAttemptAscent > 0) && (climbAttemptDescent == 0)) {
     // Condition that you can make actions in Ascent period
     output.climbDurationAscent = input.DurationAscent - climbTotalDurationAscent;
@@ -81,8 +82,8 @@ function onLap(input, output) {
   // Initializing Variables for new Ascent and increase output.climbAttempts Variable
   output.climbAttemptAscent = 0;
   climbAttemptDescent = 0;
-  climbTotalAscent = input.AscentMeters;
-  climbTotalDescent = input.DescentMeters;
+  climbTotalAscent = input.AscentMeters.toFixed(0);
+  climbTotalDescent = input.DescentMeters.toFixed(0);
   climbTotalDurationAscent = input.DurationDescent;
   climbTotalDurationAscent =input.DurationAscent;
   output.climbAttempts = output.climbAttempts + 1;
