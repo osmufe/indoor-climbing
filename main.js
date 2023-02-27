@@ -39,14 +39,20 @@ function evaluate(input, output) {
     if (climbDistanceStartAttempAscent == 0) {
      // Save the distance when start the Ascent
      climbDistanceStartAttempAscent = input.Distance;
-    } else {
+    }else{
      // Save the Distance in meters when ascensing because later generate the angle of each Attempt
      climbDistanceAttempAscent = input.Distance - climbDistanceStartAttempAscent;
-     // Pythagoras theorem ( Calc the Right Triangle )
-     climbRightTriangle = Math.sqrt(Math.pow(climbDistanceAttempAscent, 2) - Math.pow(output.climbAttemptAscent, 2));
-     // Calculate the angle of Cos
-     output.climbAngleAscent = Math.acos(climbRightTriangle/climbDistanceAttempAscent)*(180/Math.PI);;
+     if (climbDistanceAttempAscent > output.climbAttemptAscent) {
+      // Pythagoras theorem ( Calc the Right Triangle )
+      climbRightTriangle = Math.sqrt(Math.pow(climbDistanceAttempAscent, 2) - Math.pow(output.climbAttemptAscent, 2));
+      // Calculate the angle of Cos
+      output.climbAngleAscent = Math.acos(climbRightTriangle/climbDistanceAttempAscent)*(180/Math.PI);;
+     } else if (climbDistanceAttempAscent == output.climbAttemptAscent){
+      output.climbAngleAscent = 90;
+     } else {
+      output.climbAngleAscent = 0;
     }
+  } 
     // Condition that you can make actions in Ascent period
     output.climbDurationAscent = input.DurationAscent - climbTotalDurationAscent;
     // Use this var to save the data on SA for each lap 
